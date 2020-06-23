@@ -4,7 +4,7 @@ import './article.css';
 
 function Article(props){
     return (
-        <div className="card article">
+        <div className="card article bg-dark text-white">
             <img 
                 src="https://uproxx.com/wp-content/uploads/2020/06/FURIOSA-THERON.jpg?w=1024" 
                 className="card-img-top" 

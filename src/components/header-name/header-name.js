@@ -5,7 +5,7 @@ import './header-name.css';
 import Logo from './news-logo.png';
 
 function HeaderName(){
-    return <div className="col-4 col-xl-6 header-menu d-flex align-items-center justify-content-center">
+    return <div className="col-4 col-xl-6 header-menu d-flex align-items-center justify-content-center text-white">
         <img 
             src={ Logo } 
             alt="logo Web91" 

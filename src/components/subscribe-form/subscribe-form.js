@@ -4,7 +4,7 @@ import './subscribe-form.css';
 
 function SubscribeForm(){
     return (
-        <form>
+        <form className="text-white">
           <div className="form-group">
             <label htmlFor="subscribe-email">Subscribe to news</label>
             <input
