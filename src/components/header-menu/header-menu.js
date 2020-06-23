@@ -4,7 +4,7 @@ import './header-menu.css';
 
 function HeaderMenu(){
     return (
-        <ul className="nav">
+        <ul className="nav col-12 d-flex bg-dark">
             <li className="nav-item">
                 <a className="nav-link active" href="#">Main page</a>
             </li>

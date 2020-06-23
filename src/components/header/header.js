@@ -8,12 +8,12 @@ import HeaderMenu from '../header-menu';
 
 function Header(){
     return (
-        <>
+        <div className="row">
             <Info />
             <HeaderName/>
             <Search />
             <HeaderMenu />
-        </>
+        </div>
     );
 }
 

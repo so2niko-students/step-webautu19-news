@@ -1,13 +1,16 @@
 import React from 'react';
-
-import Header from '../header';
 import './app.css';
+import Header from '../header';
+import Main from '../main';
+import Footer from '../footer';
 
 function App(){
     return (
-        <Header />
-        // <Main />
-        // <Footer />
+        <div className="container bg-light min-vh-100">
+            <Header />
+            <Main />
+            <Footer />
+        </div>
     );
 }
 
