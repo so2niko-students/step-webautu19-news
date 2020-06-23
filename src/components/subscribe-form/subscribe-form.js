@@ -9,13 +9,13 @@ function SubscribeForm(){
             <label htmlFor="subscribe-email">Subscribe to news</label>
             <input
               type="email"
-              className="form-control"
+              className="form-control form-control-sm"
               id="subscribe-email"
               aria-describedby="email"
               placeholder="Email address"
             />
           </div>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-sm btn-primary">
             Subscribe
           </button>
         </form>

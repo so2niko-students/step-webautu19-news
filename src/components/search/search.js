@@ -4,7 +4,7 @@ import './search.css';
 
 function Search(){
     return (      
-        <form className="form-inline col-5 col-xl-3 align-right">
+        <form className="form-inline col-5 col-xl-3">
             <input 
                 className="form-control form-control-sm mr-2" 
                 type="search" 
