@@ -19,7 +19,5 @@ export default class NewsService{
                 .then(req => req.json())
                 .then(data => this.prepareArticles(data));
     }
-    prepareArticlesSmall(req){
-        return req.articlesSmall;
-    }
+   
 }
