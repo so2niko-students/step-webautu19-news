@@ -6,8 +6,7 @@ export default class ExchangeService {
         return fetch(url)
            .then(req => req.json())
            .then(data =>{
-           return this.prepareExchange
-           (curr, data);
+           return this.prepareExchange(curr, data);
         } );
     }
     
