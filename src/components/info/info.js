@@ -2,19 +2,29 @@ import React, { Component } from 'react';
 
 import './info.css';
 import WeatherService from '../../services/weather-service/';
+import ExchangeService from '../../services/exchange-service/';
+
 
 class Info extends Component{
     state = {
         city : 'Dnipro',
-        temp : 0
+        temp : 0,
+        currency : 'EUR',
+        course : 0
     }
 
     constructor(){
         super();
         this.weatherService = new WeatherService();
-
-        this.weatherService.getWeather(this.city)
+        
+        this.weatherService.getWeather(this.state.city)
             .then(d => this.updateWeather(d));
+        
+        this.exchangeService = new ExchangeService();
+
+        this.exchangeService.getExchange(this.state.currency)
+            .then(d => this.updateExchange(d));
+
     }
 
     updateWeather(d){
@@ -25,8 +35,16 @@ class Info extends Component{
         });
     }
 
+    updateExchange(d){
+        const course = (+d.sale).toFixed(2);
+
+        this.setState({
+            course
+        });
+    }
+    
     render(){   
-        const { city, temp } = this.state;
+        const { city, temp, currency, course } = this.state;
         const sign = temp >= 0 ? '+' : '-';
 
         return (
@@ -44,7 +62,7 @@ class Info extends Component{
                     </div> */}
                 </div>
                 <div className="btn-group">
-                    <button type="button" className="btn btn-info btn-sm">USD: 26.75</button>
+                    <button type="button" className="btn btn-info btn-sm">{ currency } : { course }UAH</button>
                     <button type="button" className="btn btn-info dropdown-toggle dropdown-toggle-split btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     </button>
                     {/* <div className="dropdown-menu">
