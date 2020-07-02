@@ -2,20 +2,28 @@ import React from 'react';
 
 import './article-small.css';
 
-function ArticleSmall(props){
+function ArticleSmall({ newsSmall }){
+    if(!newsSmall){
+        return null;
+    }
+    const {
+        urlToImage,
+        title,
+        url
+    } = newsSmall;
     return (
         <div className="card bg-dark text-white article-small">
             <a 
                         className="article-title"
-                        href="https://www.cyberscoop.com/alexander-vinnik-russia-extradition-laundering/">
+                        href={ url}>
                 <img 
-                    src="https://s3-us-west-2.amazonaws.com/cyberscoop-media/wp-content/uploads/2018/08/08153007/bitcoin-2007912_1920.jpg" 
+                    src= { urlToImage }
                     className="card-img" 
-                    alt="New Zealand freezes $90 million connected to accused bitcoin launderer Alexander Vinnik" />
+                    alt={ title }/>
                 <div className="card-img-overlay">
                     <p className="card-text">
                         <span className="article-title">
-                            New Zealand freezes $90 million connected to accused bitcoin launderer Alexander Vinnik
+                           { title }
                         </span>
                     </p>
                 </div>

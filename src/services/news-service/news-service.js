@@ -8,8 +8,18 @@ export default class NewsService{
                 .then(req => req.json())
                 .then(data => this.prepareArticles(data));
     }
-
+    
     prepareArticles(req){
         return req.articles;
+    }
+
+    getNewsSmall(){
+        const url = `${this.apiUrl}country=ua&category=sports&apiKey=${this.apiKey}`;
+        return fetch(url)
+                .then(req => req.json())
+                .then(data => this.prepareArticles(data));
+    }
+    prepareArticlesSmall(req){
+        return req.articlesSmall;
     }
 }
