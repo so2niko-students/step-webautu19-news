@@ -18,8 +18,8 @@ class Main extends Component{
     }
 
 
-    updateSmallArticles(cmallarticles){
-        this.setState({ cmallarticles });
+    updateSmallArticles(smallArticles){
+        this.setState({ smallArticles });
     }
     updateArticles(articles){
         this.setState({ articles });
@@ -34,11 +34,11 @@ class Main extends Component{
                 <Article 
                     news={ articles[1] }/>
                 <ArticleSmall 
-                newsSmall={ cmallarticles[0] }/>
+                newsSmall={ smallArticles[0] }/>
                 <ArticleSmall
-                newsSmall={ cmallarticles[1] } />
+                newsSmall={ smallArticles[1] } />
                 <ArticleSmall 
-                newsSmall={ cmallarticles[2] }/>
+                newsSmall={ smallArticles[2] }/>
                 <SubscribeForm />
             </div>
         );

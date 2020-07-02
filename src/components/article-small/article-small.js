@@ -2,7 +2,7 @@ import React from 'react';
 
 import './article-small.css';
 
-function ArticleSmall(newsSmall){
+function ArticleSmall({newsSmall}){
     console.log(newsSmall);
     if(!newsSmall){
         return null;
@@ -11,7 +11,7 @@ function ArticleSmall(newsSmall){
         urlToImage,
         title,
         url
-    } = news;
+    } = newsSmall;
     return (
         <div className="card bg-dark text-white article-small">
             <a 

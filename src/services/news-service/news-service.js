@@ -21,6 +21,6 @@ export default class NewsService{
     }
 
     prepareSmallArticles(req){
-        return req.cmallarticles;
+        return req.articles;
     }
 }
