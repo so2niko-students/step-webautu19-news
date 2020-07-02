@@ -12,4 +12,15 @@ export default class NewsService{
     prepareArticles(req){
         return req.articles;
     }
+
+    getSmallNews(){
+        const url = `${this.apiUrl}apiKey=${this.apiKey}&country=ua&category=science`;
+        return fetch(url)
+                .then(req => req.json())
+                .then(data => this.prepareSmallArticles(data));
+    }
+
+    prepareSmallArticles(req){
+        return req.cmallarticles;
+    }
 }

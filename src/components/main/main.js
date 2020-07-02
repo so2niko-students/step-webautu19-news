@@ -14,23 +14,31 @@ class Main extends Component{
     constructor(props){
         super(props);
         this.newsService.getNews().then(data => this.updateArticles(data));
+        this.newsService.getSmallNews().then(data => this.updateSmallArticles(data));
     }
 
+
+    updateSmallArticles(cmallarticles){
+        this.setState({ cmallarticles });
+    }
     updateArticles(articles){
         this.setState({ articles });
     }
 
     render(){
-        const { articles } = this.state;
+        const { articles, cmallarticles } = this.state;
         return (
             <div className="row">
                 <Article 
                     news={ articles[0] }/>
                 <Article 
                     news={ articles[1] }/>
-                <ArticleSmall />
-                <ArticleSmall />
-                <ArticleSmall />
+                <ArticleSmall 
+                newsSmall={ cmallarticles[0] }/>
+                <ArticleSmall
+                newsSmall={ cmallarticles[1] } />
+                <ArticleSmall 
+                newsSmall={ cmallarticles[2] }/>
                 <SubscribeForm />
             </div>
         );
