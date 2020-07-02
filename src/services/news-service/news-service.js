@@ -17,10 +17,8 @@ export default class NewsService{
         const url = `${this.apiUrl}apiKey=${this.apiKey}&country=ua&category=science`;
         return fetch(url)
                 .then(req => req.json())
-                .then(data => this.prepareSmallArticles(data));
+                .then(data => this.prepareArticles(data));
     }
 
-    prepareSmallArticles(req){
-        return req.articles;
-    }
+   
 }

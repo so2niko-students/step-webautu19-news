@@ -26,7 +26,7 @@ class Main extends Component{
     }
 
     render(){
-        const { articles, cmallarticles } = this.state;
+        const { articles, smallArticles } = this.state;
         return (
             <div className="row">
                 <Article 
