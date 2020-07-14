@@ -7,7 +7,7 @@ export default class WeatherService{
 
         const res = await fetch(url);
         const body = res.json();
-        
+      
         return body;
     }
 }
