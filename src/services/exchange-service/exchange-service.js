@@ -1,11 +1,10 @@
 export default class ExchangeService {
     apiUrl = 'https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5';
 
-    getExchange(curr = 'EUR'){
+    async getExchange(curr = 'EUR'){
         const url = `${this.apiUrl}`;
-        return fetch(url)
-           .then(req => req.json())
-           .then(data =>{
+        const res = await fetch(url)
+        const body = res.then(req => req.json()).then(data =>{
            return this.prepareExchange(curr, data);
         } );
     }
