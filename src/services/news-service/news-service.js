@@ -4,10 +4,20 @@ export default class NewsService{
 
     async getNews(){
         const url = `${this.apiUrl}apiKey=${this.apiKey}&country=ua`;
-        const res = fetch(url);
-        const body = res.json();
+
+        const res = await fetch(url);
+        const body = await res.json();
         
-        this.prepareArticles(body);
+        return this.prepareArticles(body);
+    }
+
+    async getNewsSmall(){
+        const url = `${this.apiUrl}country=ua&category=sports&apiKey=${this.apiKey}`;
+
+        const res = await fetch(url);
+        const body = await res.json();
+        
+        return this.prepareArticles(body);
     }
 
     prepareArticles(req){
