@@ -10,7 +10,9 @@ class Info extends Component{
         city : 'Dnipro',
         temp : 0,
         currency : 'EUR',
-        course : 0
+        currency2 : 'USD',
+        course : 0,
+        course2 : 0
     }
 
     constructor(){
@@ -24,6 +26,9 @@ class Info extends Component{
 
         this.exchangeService.getExchange(this.state.currency)
             .then(d => this.updateExchange(d));
+        
+        this.exchangeService.getExchangeUSD(this.state.currency2)
+        .then(d => this.updateExchangeUSD(d));
 
     }
 
@@ -42,9 +47,16 @@ class Info extends Component{
             course
         });
     }
+    updateExchangeUSD(d){
+        const course2 = (+d.sale).toFixed(2);
+
+        this.setState({
+            course2
+        });
+    }
     
     render(){   
-        const { city, temp, currency, course } = this.state;
+        const { city, temp, currency, course, course2, currency2 } = this.state;
         const sign = temp >= 0 ? '+' : '-';
 
         return (
@@ -63,6 +75,7 @@ class Info extends Component{
                 </div>
                 <div className="btn-group">
                     <button type="button" className="btn btn-info btn-sm">{ currency } : { course }UAH</button>
+                    <button type="button" className="btn btn-info btn-sm">{ currency2 } : { course2 }UAH</button>
                     <button type="button" className="btn btn-info dropdown-toggle dropdown-toggle-split btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     </button>
                     {/* <div className="dropdown-menu">

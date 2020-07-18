@@ -10,9 +10,17 @@ export default class ExchangeService {
         } );
     }
     
+    getExchangeUSD(curr = 'USD'){
+        const url = `${this.apiUrl}`;
+        return fetch(url).then(req =>req.json()).then(data =>{
+        return this.prepareExchange(curr, data);
+        });
+    }
     prepareExchange(curr, data){
         return data.find(course =>{
               return course.ccy === curr;
         });
     }
+
+    
 }
